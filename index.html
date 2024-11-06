@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <script src="https://kit.fontawesome.com/eec69c5d8b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <section class="sec_one">
+    <div class="head  display-flex">
+      <h2>Mortgage Calculator</h1>
+        <span onclick="clearAll()">Clear All</span>
+    </div>
+    <div class="form">
+        <p>Mortgage Amount</p>
+        <div class="mortInp display-flex"><i class="fa-solid fa-sterling-sign"></i> <input type="number" id="money"></div>
+        <span class="amount-error error none">this field is required</span>
+        <div class="detailes display-flex">
+          <div class="">
+            <p>Mortgage Term</p>
+            <div class="inp-cont display-flex">
+              <input type="number" id="terms"><span>years</span>
+            </div>
+            <span class="years-error error none">this field is required</span>
+          </div>
+          <div class="">
+            <p>Interest Rate</p>
+            <div class="inp-cont display-flex">
+              <input type="number" id="interstRate"><span>&#x25;</span>
+            </div>
+            <sapn class="inter-error error none">this field is required</sapn>
+          </div>
+        </div>
+        <p>Mortgage Type</p>
+        <div class="radio ">
+          <input type="radio" name="mortage" id="repay">
+          <label for="repay">Repayment</label>
+        </div>
+        <div class="radio ">
+          <input type="radio" name="mortage" id="inter">
+          <label for="inter">Interest Only</label>
+        </div>
+        <span class="radio-error error none">this field is required</span>
+        <button class="display-flex" id="btn" onclick="CheckAndCalculate()"><img src="./assets/images/icon-calculator.svg" alt="">Calculate Repayments</button>
+    </div>
+  </section>
+  <section class="sec_two">
+    <!-- Empty results start -->
+    <div class="empty" id="emp">
+      <img src="./assets/images/illustration-empty.svg" alt="">
+      <h2> Results shown here</h2>
+      <p>  Complete the form and click “calculate repayments” to see what 
+        your monthly repayments would be.</p>
+    </div>
+      <!-- Empty results end -->
+        <!-- Completed results start -->
+        <div class="result" id="res">
+          <h4>Your results</h4>
+          <p>Your results are shown below based on the information you provided. 
+            To adjust the results, edit the form and click “calculate repayments” again.</p>
+            <div class="result-box">
+              <span>Your monthly repayments</span>
+              <h2 id="resultMonth"><i style="margin-right: 5px;" class="fa-solid fa-sterling-sign"></i></h2>
+              <span>Total you'll repay over the term</span>
+              <span id="resultTotal"><i style="margin-right: 5px;" class="fa-solid fa-sterling-sign"></i></span>
+            </div>
+        </div>
+          <!-- Completed results end -->
+  </section>
+</main>
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/elsayedelbauomy" target="_blank">Elsayed Elbauomy</a>.
+  </div>
+  <img src="" alt="">
+  <script src="./main.js"></script>
+</body>
+</html>
